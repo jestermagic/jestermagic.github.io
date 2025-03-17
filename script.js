@@ -128,10 +128,10 @@ function addRAnim(element, n) {
 
 
 document.getElementById('right').addEventListener("click", function() {
-  let element1 = document.querySelector(".projects div:nth-child(1)");
-  let element2 = document.querySelector(".projects div:nth-child(2)");
-  let element3 = document.querySelector(".projects div:nth-child(3)");
-  let element4 = document.querySelector(".projects div:nth-child(4)");
+  let element1 = document.querySelector(".projects .prog:nth-child(1)");
+  let element2 = document.querySelector(".projects .prog:nth-child(2)");
+  let element3 = document.querySelector(".projects .prog:nth-child(3)");
+  let element4 = document.querySelector(".projects .prog:nth-child(4)");
   addRAnim(element1, 1)
   addRAnim(element2, 2)
   addRAnim(element3, 3)
@@ -140,7 +140,6 @@ document.getElementById('right').addEventListener("click", function() {
 });
 
 function addRAnim1(element, n) {
-  element.classList.remove(`animate${n}`);
   element.classList.add(`animate${n}`);
   setTimeout(() => {
     element.classList.remove(`animate${n}`)
@@ -148,10 +147,10 @@ function addRAnim1(element, n) {
 }
 
 document.getElementById('left').addEventListener("click", function() {
-  let element1 = document.querySelector(".projects div:nth-child(1)");
-  let element2 = document.querySelector(".projects div:nth-child(2)");
-  let element3 = document.querySelector(".projects div:nth-child(3)");
-  let element4 = document.querySelector(".projects div:nth-child(4)");
+  let element1 = document.querySelector(".projects .prog:nth-child(1)");
+  let element2 = document.querySelector(".projects .prog:nth-child(2)");
+  let element3 = document.querySelector(".projects .prog:nth-child(3)");
+  let element4 = document.querySelector(".projects .prog:nth-child(4)");
   addRAnim1(element1, 5)
   addRAnim1(element2, 6)
   addRAnim1(element3, 7)
