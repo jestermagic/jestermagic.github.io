@@ -98,31 +98,63 @@ document.addEventListener('touchend', () => {
     })
   })
 });
-//const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//
-//let interval = null;
-//
-//document.querySelector("h1").onmouseover = event => {  
-//  let iteration = 0;
-//
-//  clearInterval(interval);
-//
-//  interval = setInterval(() => {
-//    event.target.innerText = event.target.innerText
-//      .split("")
-//      .map((letter, index) => {
-//        if(index < iteration) {
-//          return event.target.dataset.value[index];
-//        }
-//
-//        return letters[Math.floor(Math.random() * 26)]
-//      })
-//      .join("");
-//
-//    if(iteration >= event.target.dataset.value.length){ 
-//      clearInterval(interval);
-//    }
-//
-//    iteration += 1 / 3;
-//  }, 30);
-//}
+
+
+let containerprog = document.getElementById("projects");
+
+function shifhtL() {
+  let items = Array.from(containerprog.children);
+
+  if(items.length > 1) {
+    let lastElement = items.shift();
+    containerprog.appendChild(lastElement);
+  }
+}
+function shiftElements() {
+  let items = Array.from(containerprog.children);
+  
+  if (items.length > 1) {
+    let lastElement = items.pop();
+    containerprog.prepend(lastElement);
+  }
+}
+function addRAnim(element, n) {
+  element.classList.remove(`animate${n}`);
+  element.classList.add(`animate${n}`);
+  setTimeout(() => {
+    element.classList.remove(`animate${n}`)
+  }, 2000)
+}
+
+
+document.getElementById('right').addEventListener("click", function() {
+  let element1 = document.querySelector(".projects div:nth-child(1)");
+  let element2 = document.querySelector(".projects div:nth-child(2)");
+  let element3 = document.querySelector(".projects div:nth-child(3)");
+  let element4 = document.querySelector(".projects div:nth-child(4)");
+  addRAnim(element1, 1)
+  addRAnim(element2, 2)
+  addRAnim(element3, 3)
+  addRAnim(element4, 4)
+  setTimeout(() => {shifhtL();}, 2000)
+});
+
+function addRAnim1(element, n) {
+  element.classList.remove(`animate${n}`);
+  element.classList.add(`animate${n}`);
+  setTimeout(() => {
+    element.classList.remove(`animate${n}`)
+  }, 2000)
+}
+
+document.getElementById('left').addEventListener("click", function() {
+  let element1 = document.querySelector(".projects div:nth-child(1)");
+  let element2 = document.querySelector(".projects div:nth-child(2)");
+  let element3 = document.querySelector(".projects div:nth-child(3)");
+  let element4 = document.querySelector(".projects div:nth-child(4)");
+  addRAnim1(element1, 5)
+  addRAnim1(element2, 6)
+  addRAnim1(element3, 7)
+  addRAnim1(element4, 8)
+  setTimeout(() => {shiftElements();}, 2000)
+});
