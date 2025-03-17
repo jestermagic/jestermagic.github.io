@@ -370,6 +370,19 @@ body {
   perspective: 1000px;
   perspective-origin: 50% 20%;
   position: relative;
+  & img {
+    position: absolute;
+    transform: scale(0.7) translateX(-50%);
+    left: 50%;
+  }
+  & a {
+    position: absolute;
+    left: 47.5%;
+    z-index: 10;
+    color: blue;
+    top: 50%;
+    font-size: 4rem;
+  }
 }
 
 .grid {
